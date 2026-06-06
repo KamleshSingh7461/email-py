@@ -17,13 +17,7 @@ git clone https://github.com/KamleshSingh7461/email-py.git
 cd "email py"
 ```
 
-### 3. Navigate to the Dashboard
-We built two versions of this app, but the simplest and recommended version is the `flask_dashboard`.
-```bash
-cd flask_dashboard
-```
-
-### 4. Create a Virtual Environment (Optional but Recommended)
+### 3. Create a Virtual Environment (Optional but Recommended)
 This keeps your Python packages isolated.
 ```bash
 # On Windows:
