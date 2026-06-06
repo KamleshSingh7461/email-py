@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="header" style="border: none; padding-bottom: 0;">
+    <h2>Email Templates</h2>
+    <a href="{% url 'template_create' %}" class="btn">Add New Template</a>
+</div>
+<div class="card glass" style="margin-top: 1rem;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <th style="padding: 1rem;">Name</th>
+                <th style="padding: 1rem;">Subject</th>
+                <th style="padding: 1rem;">Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in templates %}
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 1rem;">{{ t.name }}</td>
+                <td style="padding: 1rem;">{{ t.subject }}</td>
+                <td style="padding: 1rem;">{{ t.created_at|date:"M d, Y" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3" style="padding: 1rem; text-align: center; color: var(--text-muted);">No templates found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

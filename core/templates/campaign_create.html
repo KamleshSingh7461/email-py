@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card glass" style="max-width: 600px; margin: 0 auto;">
+    <h2>Start New Campaign</h2>
+    <form method="post" style="margin-top: 1.5rem;">
+        {% csrf_token %}
+        <p><label>Campaign Name</label>{{ form.name }}</p>
+        <p><label>Contact List</label>{{ form.contact_list }}</p>
+        <p><label>Email Template</label>{{ form.template }}</p>
+        <button type="submit" class="btn" style="margin-top: 1rem; width: 100%; font-size: 1.1rem; padding: 0.75rem;">Launch Campaign 🚀</button>
+    </form>
+</div>
+{% endblock %}

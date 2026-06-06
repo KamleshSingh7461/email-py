@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FGSN Learning . Sports Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!--
+    ============================================================
+    USAGE GUIDE
+    ============================================================
+    Before sending, replace $User with the recipient's first name:
+      html = html.replace(/\$User/g, recipientFirstName);
+
+    ESP merge tags:
+      Mailchimp  → *|FNAME|*
+      SendGrid   → {{first_name}}
+      HubSpot    → {{ contact.firstname }}
+      Klaviyo    → {{ first_name }}
+
+    Replace [PHONE NUMBER] with your actual contact number.
+    ============================================================
+  -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111111;
+      font-family: 'Barlow', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+      background: #111111;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Top-right red glow ── */
+    .email-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(180,20,10,0.55) 0%, rgba(140,10,5,0.2) 45%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 22px 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-badge {
+      display: inline-block;
+      border: 1.5px solid #e02010;
+      color: #ffffff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 5px 14px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 30px 32px 26px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-greeting {
+      font-size: 13.5px;
+      color: #bbbbbb;
+      margin-bottom: 14px;
+    }
+    .hero-greeting span {
+      color: #e02010;
+      font-weight: 600;
+    }
+    .hero-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 66px;
+      line-height: 0.93;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .hero-headline .red {
+      color: #e02010;
+      display: block;
+    }
+
+    /* ── Thin red divider line ── */
+    .red-line {
+      height: 1px;
+      background: #e02010;
+      margin: 24px 32px;
+      opacity: 0.6;
+    }
+
+    /* ── Body copy ── */
+    .section {
+      padding: 0 32px 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .section p {
+      font-size: 14px;
+      line-height: 1.78;
+      color: #cccccc;
+    }
+
+    /* ── Program card — solid dark maroon ── */
+    .program-card {
+      margin: 0 32px 24px;
+      background: #3a0d0d;
+      padding: 22px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .program-card h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      margin-bottom: 5px;
+    }
+    .program-card .sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #e02010;
+      text-transform: uppercase;
+    }
+
+    /* ── Course covers ── */
+    .covers-section {
+      padding: 0 32px 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .covers-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #555555;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .covers-list {
+      list-style: none;
+    }
+    .covers-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid #222222;
+      font-size: 14px;
+      color: #dddddd;
+      font-weight: 500;
+    }
+    .covers-list li:last-child { border-bottom: none; }
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid #e02010;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .check-box svg {
+      width: 12px; height: 12px;
+      fill: none; stroke: #e02010;
+      stroke-width: 2.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── Instructor note ── */
+    .instructor-note {
+      margin: 8px 32px 28px;
+      background: #1c1c1c;
+      border: 1px solid #2a2a2a;
+      padding: 11px 16px;
+      font-size: 13px;
+      color: #777777;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Pricing ── */
+    .pricing-section {
+      padding: 22px 32px;
+      border-top: 1px solid #222222;
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #555555;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 70px;
+      color: #e02010;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .price-unit {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #555555;
+      text-transform: uppercase;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+    .pricing-section p {
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: #999999;
+    }
+    .pricing-section p strong { color: #ffffff; }
+
+    /* ── CTA block — solid red ── */
+    .cta-block {
+      margin: 24px 32px 28px;
+      background: #e02010;
+      padding: 26px 26px;
+      display: table;
+      width: calc(100% - 64px);
+      position: relative;
+      z-index: 1;
+    }
+    .cta-left {
+      display: table-cell;
+      vertical-align: middle;
+      width: 56%;
+    }
+    .cta-right {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+      width: 44%;
+    }
+    .cta-block h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .cta-block p {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.65;
+    }
+    .cta-phone {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cta-or {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+
+    /* ── Urgency strip ── */
+    .urgency-strip {
+      padding: 15px 32px;
+      display: flex;
+      border-top: 1px solid #222222;
+      border-bottom: 1px solid #222222;
+      position: relative;
+      z-index: 1;
+    }
+    .urgency-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #777777;
+      text-transform: uppercase;
+      flex: 1;
+      justify-content: center;
+    }
+    .urgency-item:first-child { justify-content: flex-start; }
+    .urgency-item:last-child  { justify-content: flex-end; }
+    .dot { width: 6px; height: 6px; background: #e02010; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .footer span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #444444;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper">
+
+  <!-- Top-right glow is via ::before pseudo-element -->
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">FGSN Learning . Sports Media</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-greeting">Hey, <span>$User</span> -</p>
+    <h1 class="hero-headline">
+      You want to<br>
+      <span class="red">Tell the Story.</span>
+    </h1>
+  </div>
+
+  <!-- Red divider -->
+  <div class="red-line"></div>
+
+  <!-- Opening copy -->
+  <div class="section">
+    <p>Thanks for reaching out to us. Somewhere between watching a last-over thriller or a stoppage-time winner, you thought &mdash; I want to be on the other side of this. The one telling the story. The one building the narrative.</p>
+  </div>
+
+  <div class="section">
+    <p>We saw your enquiry and we know you want to work in the sports industry, and honestly, we&rsquo;re building something for exactly you.</p>
+  </div>
+
+  <!-- Program card — solid dark maroon -->
+  <div class="program-card">
+    <h2>Digital Sports Media</h2>
+    <div class="sub">A 30/60-Day Intensive Program</div>
+  </div>
+
+  <!-- Program description -->
+  <div class="section">
+    <p>This isn&rsquo;t a lecture series. This is a room full of people who&rsquo;ve actually done the job &mdash; and they&rsquo;re going to show you how.</p>
+  </div>
+
+  <!-- Course covers -->
+  <div class="covers-section">
+    <div class="covers-label">Here&rsquo;s what the course covers</div>
+    <ul class="covers-list">
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Sports Storytelling &amp; Content Creation</li>
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Commentary, Presenting &amp; On-Air Skills</li>
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Social Media Strategy for Sports Brands</li>
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Podcasting &amp; Digital Audio Production</li>
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Behind-the-Scenes of Live Sports Broadcasting</li>
+      <li><div class="check-box"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>How to Build &amp; Pitch Your Personal Brand</li>
+    </ul>
+  </div>
+
+  <!-- Instructor note -->
+  <div class="instructor-note">
+    Taught by working professionals from across the Indian sports media landscape.
+  </div>
+
+  <!-- Pricing -->
+  <div class="pricing-section">
+    <div class="pricing-label">Course Investment</div>
+    <div class="price">&#8377;&nbsp;39,999</div>
+    <div class="price-unit">One-Time Fee</div>
+    <p>Yes, it&rsquo;s an investment. But so was every jersey, every subscription, every late-night watching highlights. <strong>The difference is &mdash; this one pays back.</strong></p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="cta-left">
+      <h3>Want the full breakdown?</h3>
+      <p>We&rsquo;ll walk you through everything &mdash; structure, schedule, what to expect, and how to lock in your spot.</p>
+    </div>
+    <div class="cta-right">
+      <span class="cta-phone">[PHONE NUMBER]</span>
+      <span class="cta-or">or WhatsApp us</span>
+    </div>
+  </div>
+
+  <!-- Urgency strip -->
+  <div class="urgency-strip">
+    <div class="urgency-item"><span class="dot"></span>Spots are limited</div>
+    <div class="urgency-item"><span class="dot"></span>The industry doesn&rsquo;t wait</div>
+    <div class="urgency-item"><span class="dot"></span>Neither should you</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Warm regards, Team FGSN Learning</span>
+    <span>Let&rsquo;s get to work.</span>
+  </div>
+
+</div>
+</body>
+</html>
