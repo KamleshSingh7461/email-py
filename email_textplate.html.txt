@@ -23,12 +23,14 @@
   -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       background: #111111;
       font-family: 'Barlow', sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ── Wrapper ── */
     .email-wrapper {
       max-width: 620px;
       margin: 0 auto;
@@ -43,8 +45,8 @@
       position: absolute;
       top: -60px;
       right: -60px;
-      width: 320px;
-      height: 320px;
+      width: 280px;
+      height: 280px;
       background: radial-gradient(circle, rgba(180,20,10,0.55) 0%, rgba(140,10,5,0.2) 45%, transparent 70%);
       pointer-events: none;
       z-index: 0;
@@ -52,7 +54,7 @@
 
     /* ── Header ── */
     .header {
-      padding: 22px 32px;
+      padding: 18px 24px;
       position: relative;
       z-index: 1;
     }
@@ -61,22 +63,22 @@
       border: 1.5px solid #e02010;
       color: #ffffff;
       font-family: 'Barlow', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.04em;
-      padding: 5px 14px;
+      padding: 5px 12px;
     }
 
     /* ── Hero ── */
     .hero {
-      padding: 30px 32px 26px;
+      padding: 22px 24px 20px;
       position: relative;
       z-index: 1;
     }
     .hero-greeting {
-      font-size: 13.5px;
+      font-size: 13px;
       color: #bbbbbb;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .hero-greeting span {
       color: #e02010;
@@ -85,7 +87,7 @@
     .hero-headline {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 66px;
+      font-size: clamp(38px, 9vw, 66px);
       line-height: 0.93;
       color: #ffffff;
       text-transform: uppercase;
@@ -100,13 +102,13 @@
     .red-line {
       height: 1px;
       background: #e02010;
-      margin: 24px 32px;
+      margin: 20px 24px;
       opacity: 0.6;
     }
 
     /* ── Body copy ── */
     .section {
-      padding: 0 32px 22px;
+      padding: 0 24px 18px;
       position: relative;
       z-index: 1;
     }
@@ -116,25 +118,25 @@
       color: #cccccc;
     }
 
-    /* ── Program card — solid dark maroon ── */
+    /* ── Program card ── */
     .program-card {
-      margin: 0 32px 24px;
+      margin: 0 24px 20px;
       background: #3a0d0d;
-      padding: 22px 24px;
+      padding: 18px 20px;
       position: relative;
       z-index: 1;
     }
     .program-card h2 {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: 28px;
+      font-size: clamp(22px, 5vw, 28px);
       color: #ffffff;
       letter-spacing: 0.01em;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .program-card .sub {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.18em;
       color: #e02010;
@@ -143,7 +145,7 @@
 
     /* ── Course covers ── */
     .covers-section {
-      padding: 0 32px 8px;
+      padding: 0 24px 8px;
       position: relative;
       z-index: 1;
     }
@@ -154,7 +156,7 @@
       letter-spacing: 0.2em;
       color: #555555;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .covers-list {
       list-style: none;
@@ -162,17 +164,17 @@
     .covers-list li {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 13px 0;
+      gap: 12px;
+      padding: 11px 0;
       border-bottom: 1px solid #222222;
-      font-size: 14px;
+      font-size: 13.5px;
       color: #dddddd;
       font-weight: 500;
     }
     .covers-list li:last-child { border-bottom: none; }
     .check-box {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border: 1.5px solid #e02010;
       display: flex;
       align-items: center;
@@ -180,7 +182,7 @@
       flex-shrink: 0;
     }
     .check-box svg {
-      width: 12px; height: 12px;
+      width: 11px; height: 11px;
       fill: none; stroke: #e02010;
       stroke-width: 2.5;
       stroke-linecap: round; stroke-linejoin: round;
@@ -188,12 +190,12 @@
 
     /* ── Instructor note ── */
     .instructor-note {
-      margin: 8px 32px 28px;
+      margin: 8px 24px 24px;
       background: #1c1c1c;
       border: 1px solid #2a2a2a;
-      padding: 11px 16px;
+      padding: 10px 14px;
       font-size: 13px;
-      color: #777777;
+      color: #e02010;
       font-style: italic;
       position: relative;
       z-index: 1;
@@ -201,7 +203,7 @@
 
     /* ── Pricing ── */
     .pricing-section {
-      padding: 22px 32px;
+      padding: 20px 24px;
       border-top: 1px solid #222222;
       position: relative;
       z-index: 1;
@@ -213,80 +215,81 @@
       letter-spacing: 0.2em;
       color: #555555;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .price {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 70px;
+      font-size: clamp(48px, 13vw, 70px);
       color: #e02010;
       line-height: 1;
       letter-spacing: -0.02em;
     }
     .price-unit {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.18em;
       color: #555555;
       text-transform: uppercase;
-      margin-top: 6px;
-      margin-bottom: 16px;
+      margin-top: 5px;
+      margin-bottom: 14px;
     }
     .pricing-section p {
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.72;
       color: #999999;
     }
     .pricing-section p strong { color: #ffffff; }
 
-    /* ── CTA block — solid red ── */
+    /* ── CTA block ── */
     .cta-block {
-      margin: 24px 32px 28px;
+      margin: 20px 24px 24px;
       background: #e02010;
-      padding: 26px 26px;
-      display: table;
-      width: calc(100% - 64px);
+      padding: 22px 22px;
       position: relative;
       z-index: 1;
     }
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
     .cta-left {
-      display: table-cell;
-      vertical-align: middle;
-      width: 56%;
+      flex: 1 1 55%;
     }
     .cta-right {
-      display: table-cell;
-      vertical-align: middle;
+      flex: 0 0 auto;
       text-align: right;
-      width: 44%;
     }
     .cta-block h3 {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 22px;
+      font-size: clamp(18px, 4.5vw, 22px);
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .cta-block p {
-      font-size: 12.5px;
+      font-size: 12px;
       color: rgba(255,255,255,0.82);
       line-height: 1.65;
     }
     .cta-phone {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 22px;
+      font-size: clamp(17px, 4vw, 22px);
       color: #ffffff;
       letter-spacing: 0.02em;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
+      white-space: nowrap;
     }
     .cta-or {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.2em;
       color: rgba(255,255,255,0.7);
@@ -295,8 +298,10 @@
 
     /* ── Urgency strip ── */
     .urgency-strip {
-      padding: 15px 32px;
+      padding: 12px 24px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 8px 0;
       border-top: 1px solid #222222;
       border-bottom: 1px solid #222222;
       position: relative;
@@ -305,24 +310,26 @@
     .urgency-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: #777777;
       text-transform: uppercase;
-      flex: 1;
+      flex: 1 1 30%;
       justify-content: center;
     }
     .urgency-item:first-child { justify-content: flex-start; }
     .urgency-item:last-child  { justify-content: flex-end; }
-    .dot { width: 6px; height: 6px; background: #e02010; border-radius: 50%; flex-shrink: 0; }
+    .dot { width: 5px; height: 5px; background: #e02010; border-radius: 50%; flex-shrink: 0; }
 
     /* ── Footer ── */
     .footer {
-      padding: 18px 32px;
+      padding: 16px 24px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
       justify-content: space-between;
       align-items: center;
       position: relative;
@@ -330,18 +337,95 @@
     }
     .footer span {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
       color: #444444;
       text-transform: uppercase;
     }
+
+    /* ── Closing tagline ── */
+    .closing-tagline {
+      padding: 18px 24px 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .closing-tagline h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(26px, 7vw, 46px);
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+    }
+    .closing-tagline h2 .red { color: #e02010; }
+
+    /* ============================================================
+       RESPONSIVE: Mobile-first adjustments
+       ============================================================ */
+    @media (max-width: 480px) {
+
+      .header { padding: 14px 16px; }
+      .hero   { padding: 16px 16px 14px; }
+
+      .red-line { margin: 14px 16px; }
+
+      .section        { padding: 0 16px 14px; }
+      .program-card   { margin: 0 16px 16px; padding: 14px 16px; }
+      .covers-section { padding: 0 16px 6px; }
+      .instructor-note{ margin: 6px 16px 18px; }
+      .pricing-section{ padding: 16px 16px; }
+      .cta-block      { margin: 16px 16px 18px; padding: 18px 16px; }
+      .urgency-strip  { padding: 10px 16px; }
+      .footer         { padding: 12px 16px; }
+      .closing-tagline{ padding: 12px 16px 22px; }
+
+      /* Stack CTA vertically on very small screens */
+      .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .cta-right {
+        text-align: left;
+        width: 100%;
+        padding-top: 8px;
+      }
+      .cta-phone { white-space: normal; }
+
+      /* Urgency items stack in a single column on very small */
+      .urgency-item {
+        flex: 1 1 100%;
+        justify-content: flex-start !important;
+      }
+
+      /* Footer stacks */
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 620px) {
+      .header, .hero, .red-line,
+      .section, .program-card, .covers-section,
+      .instructor-note, .pricing-section,
+      .cta-block, .urgency-strip, .footer,
+      .closing-tagline {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .program-card   { margin-left: 20px; margin-right: 20px; }
+      .instructor-note{ margin-left: 20px; margin-right: 20px; }
+      .cta-block      { margin-left: 20px; margin-right: 20px; }
+      .red-line       { margin-left: 20px; margin-right: 20px; }
+    }
   </style>
 </head>
 <body>
 <div class="email-wrapper">
-
-  <!-- Top-right glow is via ::before pseudo-element -->
 
   <!-- Header -->
   <div class="header">
@@ -352,8 +436,8 @@
   <div class="hero">
     <p class="hero-greeting">Hey, <span>$User</span> -</p>
     <h1 class="hero-headline">
-      You want to<br>
-      <span class="red">Tell the Story.</span>
+      You want to tell<br>
+      <span class="red">The Sporting Story?</span>
     </h1>
   </div>
 
@@ -362,22 +446,14 @@
 
   <!-- Opening copy -->
   <div class="section">
-    <p>Thanks for reaching out to us. Somewhere between watching a last-over thriller or a stoppage-time winner, you thought &mdash; I want to be on the other side of this. The one telling the story. The one building the narrative.</p>
+    <p>Thanks for reaching out to us. We saw your enquiry and we know you want to work in the sports industry, and honestly, we&rsquo;re building something for exactly you, where <span style="color:#e02010;font-weight:600;">you get to be the one telling the story.</span> The one building the narrative.</p>
   </div>
 
-  <div class="section">
-    <p>We saw your enquiry and we know you want to work in the sports industry, and honestly, we&rsquo;re building something for exactly you.</p>
-  </div>
-
-  <!-- Program card — solid dark maroon -->
+  <!-- Program card -->
   <div class="program-card">
     <h2>Digital Sports Media</h2>
     <div class="sub">A 30/60-Day Intensive Program</div>
-  </div>
-
-  <!-- Program description -->
-  <div class="section">
-    <p>This isn&rsquo;t a lecture series. This is a room full of people who&rsquo;ve actually done the job &mdash; and they&rsquo;re going to show you how.</p>
+    <p style="margin-top:10px;font-size:13px;color:#cccccc;line-height:1.6;">This is a room full of people who&rsquo;ve actually done the job &mdash; and they&rsquo;re going to show you how.</p>
   </div>
 
   <!-- Course covers -->
@@ -403,19 +479,26 @@
     <div class="pricing-label">Course Investment</div>
     <div class="price">&#8377;&nbsp;39,999</div>
     <div class="price-unit">One-Time Fee</div>
-    <p>Yes, it&rsquo;s an investment. But so was every jersey, every subscription, every late-night watching highlights. <strong>The difference is &mdash; this one pays back.</strong></p>
+    <p>Yes, it&rsquo;s an investment. But <strong>this one pays back instantly&nbsp;.</strong></p>
   </div>
 
   <!-- CTA -->
   <div class="cta-block">
-    <div class="cta-left">
-      <h3>Want the full breakdown?</h3>
-      <p>We&rsquo;ll walk you through everything &mdash; structure, schedule, what to expect, and how to lock in your spot.</p>
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h3>Want the full breakdown?</h3>
+        <p>We&rsquo;ll walk you through everything &mdash; structure, schedule, what to expect, and how to lock in your spot.</p>
+      </div>
+      <div class="cta-right">
+        <span class="cta-phone">+91-1234567890</span>
+        <span class="cta-or">or WhatsApp us</span>
+      </div>
     </div>
-    <div class="cta-right">
-      <span class="cta-phone">[PHONE NUMBER]</span>
-      <span class="cta-or">or WhatsApp us</span>
-    </div>
+  </div>
+
+  <!-- Closing tagline -->
+  <div class="closing-tagline">
+    <h2>The industry doesn&rsquo;t wait,<br><span class="red">So lets get to work!!</span></h2>
   </div>
 
   <!-- Urgency strip -->

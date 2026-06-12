@@ -2,12 +2,17 @@ import os
 import smtplib
 from email.message import EmailMessage
 import pandas as pd
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 
 app = Flask(__name__)
 app.secret_key = 'super_secret_key_for_flash_messages'
 
+@app.route('/preview')
+def preview():
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'email_template.html')
+
 @app.route('/', methods=['GET', 'POST'])
+
 def index():
     if request.method == 'POST':
         smtp_host = request.form.get('smtp_host')
@@ -66,11 +71,7 @@ def index():
                 else:
                     rendered_html = rendered_html.replace('$User', 'there')
                     
-                # Replace [PHONE NUMBER] if available
-                phone_col = next((c for c in cols if 'phone' in c or 'contact' in c), None)
-                if phone_col:
-                    phone = str(row[cols[phone_col]]).strip()
-                    rendered_html = rendered_html.replace('[PHONE NUMBER]', phone)
+                # [PHONE NUMBER] is the fixed company number — already set in the template
                 
                 # Replace other potential merge tags from columns like {{Column Name}}
                 for col in df.columns:

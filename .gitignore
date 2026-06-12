@@ -6,3 +6,6 @@ db.sqlite3
 .env
 .idea/
 .vscode/
+
+# Credentials — NEVER commit passwords
+pass.txt
