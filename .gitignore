@@ -9,3 +9,4 @@ db.sqlite3
 
 # Credentials — NEVER commit passwords
 pass.txt
+smtp.txt

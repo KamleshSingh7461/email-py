@@ -1,6 +1,9 @@
 import os
 import smtplib
+import re
+import mimetypes
 from email.message import EmailMessage
+from email.utils import make_msgid
 import pandas as pd
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 
@@ -42,6 +45,17 @@ def index():
         success_count = 0
         error_count = 0
         
+        local_images = []
+        def replace_img_src(match):
+            src = match.group(1)
+            if not src.startswith(('http://', 'https://', 'data:')) and os.path.isfile(src):
+                cid = make_msgid()
+                local_images.append((src, cid))
+                return f'src="cid:{cid[1:-1]}"'
+            return match.group(0)
+            
+        html_template_modified = re.sub(r'src="([^"]+)"', replace_img_src, html_template)
+        
         try:
             # Connect to SMTP
             server = smtplib.SMTP(smtp_host, smtp_port)
@@ -61,7 +75,7 @@ def index():
                     continue
                 
                 # Render template
-                rendered_html = html_template
+                rendered_html = html_template_modified
                 
                 # Replace $User with First Name if available
                 first_name_col = next((c for c in cols if 'first' in c or 'name' in c), None)
@@ -84,6 +98,18 @@ def index():
                 msg['To'] = to_email
                 msg.set_content("Please view this email in an HTML compatible client.")
                 msg.add_alternative(rendered_html, subtype='html')
+                
+                if local_images:
+                    html_part = msg.get_payload()[1]
+                    for img_path, cid in local_images:
+                        with open(img_path, 'rb') as img:
+                            img_data = img.read()
+                            mime_guess = mimetypes.guess_type(img_path)[0]
+                            if mime_guess:
+                                maintype, subtype = mime_guess.split('/')
+                            else:
+                                maintype, subtype = 'image', 'jpeg'
+                            html_part.add_related(img_data, maintype=maintype, subtype=subtype, cid=cid)
                 
                 try:
                     server.send_message(msg)
