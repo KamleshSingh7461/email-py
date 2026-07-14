@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -14,25 +14,29 @@
     body, table, td { font-family: Arial, sans-serif !important; }
   </style>
   <![endif]-->
-  <!--
-    ============================================================
-    EMAIL TEMPLATE — FGSN Learning . Digital Sports Media
-    ============================================================
-    Phone  → +91-1234567890 (update in CTA block when needed)
-    ============================================================
-  -->
-  <!-- Force light mode in all email clients -->
   <meta name="color-scheme" content="light" />
   <meta name="supported-color-schemes" content="light" />
   <style type="text/css">
-    /* Force light mode — prevent email client dark mode inversion */
-    :root { color-scheme: light only; }
+    :root {
+      color-scheme: light only;
+    }
+
     body {
-      background-color: #f2f2f2 !important;
+      background-color: #f0f0f0 !important;
       color: #111111 !important;
     }
+
     @media (prefers-color-scheme: dark) {
-      body, table, td, p, h1, h2, h3, span, div {
+
+      body,
+      table,
+      td,
+      p,
+      h1,
+      h2,
+      h3,
+      span,
+      div {
         background-color: inherit !important;
         color: inherit !important;
       }
@@ -40,99 +44,83 @@
   </style>
 </head>
 
-<body style="margin:0;padding:0;background-color:#f2f2f2;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;">
+<body style="margin:0;padding:0;background-color:#f0f0f0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;">
 
-  <!-- Outer wrapper -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2"
-    style="background-color:#f2f2f2;margin:0;padding:0;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0"
+    style="background-color:#f0f0f0;margin:0;padding:0;">
     <tr>
-      <td align="center" valign="top" bgcolor="#f2f2f2" style="padding:16px 0;background-color:#f2f2f2;">
+      <td align="center" valign="top" bgcolor="#f0f0f0" style="padding:28px 0;background-color:#f0f0f0;">
 
-        <!-- Inner content (620px fixed) -->
-        <table width="620" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
+        <table width="620" cellpadding="0" cellspacing="0" border="0"
           style="max-width:620px;width:100%;background-color:#ffffff;font-family:'Barlow',Arial,Helvetica,sans-serif;">
 
-          <!-- ══ HEADER BADGE ══ -->
-          <tr>
-            <td bgcolor="#ffffff" style="padding:18px 24px 10px 24px;background-color:#ffffff;">
-              <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td bgcolor="#ffffff" style="border:1.5px solid #e02010;padding:5px 12px;
-                            font-family:'Barlow',Arial,Helvetica,sans-serif;
-                            font-size:12px;font-weight:500;letter-spacing:0.06em;
-                            color:#111111;background-color:#ffffff;">
-                    FGSN Learning . Sports Media
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- ══ HERO — Greeting + Headline ══ -->
-          <tr>
-            <td bgcolor="#ffffff" style="padding:18px 24px 16px 24px;background-color:#ffffff;">
-              <!-- Greeting -->
-              <p style="margin:0 0 10px 0;font-size:13px;line-height:1.5;
-                       font-family:'Barlow',Arial,Helvetica,sans-serif;color:#666666;">
-                Hey, <span style="color:#e02010;font-weight:600;">there</span> -
-              </p>
-              <!-- Headline -->
-              <h3 style="margin:0;
-                        font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                        font-weight:900;font-size:20px;line-height:1.2;
-                        color:#111111;text-transform:uppercase;letter-spacing:-0.01em;">
-                You want to tell <span style="color:#e02010;">The Sporting Story?</span>
-              </h3>
-            </td>
-          </tr>
-
-          <!-- ══ RED DIVIDER ══ -->
-          <tr>
-            <td bgcolor="#ffffff" style="padding:4px 24px 16px 24px;background-color:#ffffff;">
+          <!-- TOP LOGO BAR -->
+          <!-- <tr>
+            <td bgcolor="#111111" style="padding:14px 28px;background-color:#111111;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td height="1" bgcolor="#e02010" style="background-color:#e02010;font-size:1px;line-height:1px;">
-                    &nbsp;</td>
+                  <td style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:0.14em;color:#ffffff;text-transform:uppercase;">
+                    FGSN <span style="color:#e02010;">Learning</span> &nbsp;&middot;&nbsp; Sports Media
+                  </td>
+                  <td align="right" style="font-family:'Barlow',Arial,sans-serif;font-size:10px;color:rgba(255,255,255,0.40);letter-spacing:0.06em;">
+                    Digital Sports Media Program
+                  </td>
                 </tr>
               </table>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ══ OPENING COPY ══ -->
+          <!-- HERO BANNER -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px 20px 24px;background-color:#ffffff;">
-              <p style="margin:0;font-size:13px;line-height:1.72;
-                       font-family:'Barlow',Arial,Helvetica,sans-serif;color:#444444;">
-                Thanks for reaching out to us. We saw your enquiry and we know you want to work in the
-                sports industry, and honestly, we&rsquo;re building something for exactly you, where
-                <span style="color:#e02010;font-weight:600;">you get to be the one telling the story.</span>
-                The one building the narrative.
+            <td bgcolor="#1a1a1a" style="padding:40px 28px 36px 28px;background-color:#1a1a1a;">
+              <p style="margin:0 0 14px 0;">
+                <span
+                  style="display:inline-block;background-color:#e02010;font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.22em;color:#ffffff;text-transform:uppercase;padding:4px 10px;">
+                  Exclusive Opportunity
+                </span>
+              </p>
+              <p
+                style="margin:0 0 8px 0;font-family:'Barlow',Arial,sans-serif;font-size:14px;color:rgba(255,255,255,0.60);line-height:1.5;">
+                Hey there &mdash;
+              </p>
+              <h1
+                style="margin:0 0 16px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:900;font-size:38px;line-height:1.1;color:#ffffff;text-transform:uppercase;letter-spacing:-0.01em;">
+                You want to tell<br>
+                <span style="color:#e02010;">The Sporting Story?</span>
+              </h1>
+              <p
+                style="margin:0;font-family:'Barlow',Arial,sans-serif;font-size:14px;line-height:1.75;color:rgba(255,255,255,0.72);">
+                We saw your enquiry. We know you want to work in sports &mdash; and we&rsquo;re building something
+                exactly for you. Where <span style="color:#e02010;font-weight:600;">you get to be the one telling the
+                  story.</span> The one building the narrative.
               </p>
             </td>
           </tr>
 
-          <!-- ══ PROGRAM CARD ══ -->
+          <!-- RED ACCENT LINE -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px 20px 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#fff0ef"
-                style="background-color:#fff0ef;">
+            <td height="4" bgcolor="#e02010" style="background-color:#e02010;font-size:1px;line-height:1px;">&nbsp;</td>
+          </tr>
+
+          <!-- PROGRAM CARD -->
+          <tr>
+            <td bgcolor="#ffffff" style="padding:28px 28px 0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                style="background-color:#fff4f3;border-left:4px solid #e02010;">
                 <tr>
-                  <td style="padding:18px 20px;">
-                    <h2 style="margin:0 0 4px 0;
-                              font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                              font-weight:800;font-size:26px;color:#111111;letter-spacing:0.01em;">
+                  <td style="padding:20px 22px;">
+                    <p
+                      style="margin:0 0 2px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;color:#e02010;text-transform:uppercase;">
+                      30 / 60-Day Intensive Program
+                    </p>
+                    <h2
+                      style="margin:0 0 8px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:900;font-size:28px;color:#111111;letter-spacing:0.01em;">
                       Digital Sports Media
                     </h2>
-                    <p style="margin:0 0 10px 0;
-                             font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                             font-size:11px;font-weight:700;letter-spacing:0.18em;
-                             color:#e02010;text-transform:uppercase;">
-                      A 30/60-Day Intensive Program
-                    </p>
-                    <p style="margin:0;font-size:13px;color:#555555;line-height:1.6;
-                             font-family:'Barlow',Arial,Helvetica,sans-serif;">
-                      This is a room full of people who&rsquo;ve actually done the job &mdash;
-                      and they&rsquo;re going to show you how.
+                    <p
+                      style="margin:0;font-size:13px;color:#555555;line-height:1.7;font-family:'Barlow',Arial,sans-serif;">
+                      A room full of people who&rsquo;ve actually done the job &mdash; and they&rsquo;re going to show
+                      you how.
                     </p>
                   </td>
                 </tr>
@@ -140,34 +128,33 @@
             </td>
           </tr>
 
-          <!-- ══ COURSE COVERS LABEL ══ -->
+          <!-- COURSE COVERS LABEL -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px 10px 24px;background-color:#ffffff;">
-              <p style="margin:0;font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                       font-size:11px;font-weight:700;letter-spacing:0.22em;
-                       color:#999999;text-transform:uppercase;">
-                Here&rsquo;s what the course covers
+            <td bgcolor="#ffffff" style="padding:24px 28px 12px 28px;background-color:#ffffff;">
+              <p
+                style="margin:0;font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.26em;color:#aaaaaa;text-transform:uppercase;">
+                What the course covers
               </p>
             </td>
           </tr>
 
-          <!-- Checklist row 1 -->
+          <!-- CHECKLIST ROW 1 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;border-bottom:1px solid #eeeeee;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #f0f0f0;">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
                     Sports Storytelling &amp; Content Creation
                   </td>
                 </tr>
@@ -175,23 +162,23 @@
             </td>
           </tr>
 
-          <!-- Checklist row 2 -->
+          <!-- CHECKLIST ROW 2 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;border-bottom:1px solid #eeeeee;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #f0f0f0;">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
                     Commentary, Presenting &amp; On-Air Skills
                   </td>
                 </tr>
@@ -199,47 +186,47 @@
             </td>
           </tr>
 
-          <!-- Checklist row 3 -->
+          <!-- CHECKLIST ROW 3 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;border-bottom:1px solid #eeeeee;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #f0f0f0;">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
-                    Social Media Strategy for Sports Brands
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
+                    Social Media Strategy For Sports Brands
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- Checklist row 4 -->
+          <!-- CHECKLIST ROW 4 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;border-bottom:1px solid #eeeeee;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #f0f0f0;">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
                     Podcasting &amp; Digital Audio Production
                   </td>
                 </tr>
@@ -247,195 +234,185 @@
             </td>
           </tr>
 
-          <!-- Checklist row 5 -->
+          <!-- CHECKLIST ROW 5 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;border-bottom:1px solid #eeeeee;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid #f0f0f0;">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
-                    Behind-the-Scenes of Live Sports Broadcasting
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
+                    Behind-the-Scenes Of Live Sports Broadcasting
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- Checklist row 6 (last) -->
+          <!-- CHECKLIST ROW 6 -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff"
-                style="background-color:#ffffff;">
+            <td bgcolor="#ffffff" style="padding:0 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td width="32" valign="middle" style="padding:11px 12px 11px 0;">
-                    <table width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                      style="border:1.5px solid #e02010;">
+                  <td width="36" valign="middle" style="padding:12px 14px 12px 0;">
+                    <table width="22" height="22" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
+                      style="background-color:#e02010;border-radius:2px;">
                       <tr>
-                        <td align="center" valign="middle" style="color:#e02010;font-size:13px;font-weight:bold;
-                                 font-family:Arial,sans-serif;line-height:1;">&#10003;</td>
+                        <td align="center" valign="middle"
+                          style="color:#ffffff;font-size:13px;font-weight:bold;font-family:Arial,sans-serif;line-height:1;">
+                          &#10003;</td>
                       </tr>
                     </table>
                   </td>
-                  <td valign="middle" style="padding:11px 0;font-size:13px;color:#333333;
-                                            font-weight:500;font-family:'Barlow',Arial,sans-serif;">
-                    How to Build &amp; Pitch Your Personal Brand
+                  <td valign="middle"
+                    style="padding:12px 0;font-size:13px;color:#222222;font-weight:600;font-family:'Barlow',Arial,sans-serif;">
+                    How To Build &amp; Pitch Your Personal Brand
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ══ INSTRUCTOR NOTE ══ -->
+          <!-- INSTRUCTOR NOTE -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:12px 24px 24px 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f5f5"
-                style="background-color:#f5f5f5;border:1px solid #e5e5e5;">
+            <td bgcolor="#ffffff" style="padding:20px 28px;background-color:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#1a1a1a"
+                style="background-color:#1a1a1a;">
                 <tr>
-                  <td style="padding:10px 14px;font-size:13px;color:#e02010;font-style:italic;
-                            font-family:'Barlow',Arial,Helvetica,sans-serif;line-height:1.6;">
-                    Taught by working professionals from across the Indian sports media landscape.
+                  <td
+                    style="padding:16px 20px;font-size:13px;color:rgba(255,255,255,0.80);font-style:italic;font-family:'Barlow',Arial,sans-serif;line-height:1.65;">
+                    &#8220;&nbsp;Taught by working professionals from across the <span
+                      style="color:#e02010;font-style:normal;font-weight:600;">Indian sports media
+                      landscape.</span>&nbsp;&#8221;
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ══ PRICING ══ -->
+          <!-- PRICING BLOCK -->
           <tr>
-            <td bgcolor="#ffffff"
-              style="padding:20px 24px 20px 24px;border-top:1px solid #eeeeee;background-color:#ffffff;">
-              <p style="margin:0 0 8px 0;
-                       font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                       font-size:11px;font-weight:700;letter-spacing:0.22em;
-                       color:#999999;text-transform:uppercase;">
-                Course Investment
-              </p>
-              <p style="margin:0;
-                       font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                       font-weight:900;font-size:46px;color:#e02010;
-                       line-height:1;letter-spacing:-0.02em;">
-                &#8377;&nbsp;39,999
-              </p>
-              <p style="margin:5px 0 14px 0;
-                       font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                       font-size:11px;font-weight:700;letter-spacing:0.18em;
-                       color:#999999;text-transform:uppercase;">
-                One-Time Fee
-              </p>
-              <p style="margin:0;font-size:13px;line-height:1.72;color:#666666;
-                       font-family:'Barlow',Arial,Helvetica,sans-serif;">
-                Yes, it&rsquo;s an investment. But
-                <strong style="color:#111111;">this one pays back instantly&nbsp;.</strong>
-              </p>
-            </td>
-          </tr>
-
-          <!-- ══ CTA BLOCK (RED) ══ -->
-          <tr>
-            <td bgcolor="#ffffff" style="padding:0 24px 24px 24px;background-color:#ffffff;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e02010"
-                style="background-color:#e02010;">
+            <td bgcolor="#fafafa"
+              style="padding:24px 28px;background-color:#fafafa;border-top:1px solid #eeeeee;border-bottom:1px solid #eeeeee;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <!-- Left: heading + body copy -->
-                  <td valign="middle" style="padding:22px 16px 22px 22px;width:55%;">
-                    <h3 style="margin:0 0 6px 0;
-                              font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                              font-weight:900;font-size:18px;color:#ffffff;
-                              text-transform:uppercase;letter-spacing:0.02em;">
-                      Want the full breakdown?
-                    </h3>
-                    <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.88);line-height:1.65;
-                             font-family:'Barlow',Arial,Helvetica,sans-serif;">
-                      We&rsquo;ll walk you through everything &mdash; structure, schedule,
-                      what to expect, and how to lock in your spot.
+                  <td valign="middle">
+                    <p
+                      style="margin:0 0 4px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.26em;color:#aaaaaa;text-transform:uppercase;">
+                      Course Investment
+                    </p>
+                    <p
+                      style="margin:0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:900;font-size:52px;color:#e02010;line-height:1;letter-spacing:-0.02em;">
+                      &#8377;&nbsp;39,999
+                    </p>
+                    <p
+                      style="margin:6px 0 0 0;font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.20em;color:#bbbbbb;text-transform:uppercase;">
+                      One-Time Fee &nbsp;&middot;&nbsp; No Hidden Charges
                     </p>
                   </td>
-                  <!-- Right: phone + WhatsApp -->
-                  <td valign="middle" align="right" style="padding:22px 22px 22px 0;width:45%;">
-                    <span style="display:block;margin-bottom:4px;
-                                font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                                font-weight:900;font-size:16px;color:#ffffff;
-                                letter-spacing:0.02em;white-space:nowrap;">
-                      +91-1234567890
-                    </span>
-                    <span style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                                font-size:10px;font-weight:700;letter-spacing:0.2em;
-                                color:rgba(255,255,255,0.78);text-transform:uppercase;">
-                      or WhatsApp us
-                    </span>
+                  <td valign="middle" align="right">
+                    <p
+                      style="margin:0;font-size:13px;line-height:1.75;color:#666666;font-family:'Barlow',Arial,sans-serif;text-align:right;">
+                      Yes, it&rsquo;s an investment.<br>
+                      <strong style="color:#111111;">This one pays back instantly.</strong>
+                    </p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ══ CLOSING TAGLINE ══ -->
+          <!-- CTA BLOCK -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:18px 24px 28px 24px;background-color:#ffffff;">
-              <!-- Closing tagline -->
-              <h2 style="margin:0;
-                        font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                        font-weight:900;font-size:15px;color:#111111;
-                        text-transform:uppercase;line-height:1.2;letter-spacing:-0.01em;">
-                The industry doesn&rsquo;t wait, <span style="color:#e02010;">So lets get to work!!</span>
+            <td bgcolor="#e02010" style="padding:28px;background-color:#e02010;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="middle" style="width:55%;">
+                    <h3
+                      style="margin:0 0 8px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:900;font-size:22px;color:#ffffff;text-transform:uppercase;letter-spacing:0.02em;">
+                      Want the full breakdown?
+                    </h3>
+                    <p
+                      style="margin:0;font-size:13px;color:rgba(255,255,255,0.85);line-height:1.65;font-family:'Barlow',Arial,sans-serif;">
+                      We&rsquo;ll walk you through everything &mdash; structure, schedule, what to expect, and how to
+                      lock in your spot.
+                    </p>
+                  </td>
+                  <td valign="middle" align="right" style="width:45%;padding-left:16px;">
+                    <p
+                      style="margin:0 0 8px 0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.18em;color:rgba(255,255,255,0.70);text-transform:uppercase;">
+                      Reach Us At
+                    </p>
+                    <a href="mailto:contact@fgsnlive.com"
+                      style="display:inline-block;background-color:#ffffff;font-family:'Barlow Condensed',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:0.08em;color:#e02010;text-decoration:none;padding:10px 16px;text-transform:uppercase;">
+                      contact@fgsnlive.com
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CLOSING TAGLINE -->
+          <tr>
+            <td bgcolor="#ffffff" style="padding:24px 28px;background-color:#ffffff;">
+              <h2
+                style="margin:0;font-family:'Barlow Condensed',Arial,sans-serif;font-weight:900;font-size:17px;color:#111111;text-transform:uppercase;line-height:1.3;letter-spacing:-0.01em;">
+                The industry doesn&rsquo;t wait &mdash; <span style="color:#e02010;">So let&rsquo;s get to work!</span>
               </h2>
             </td>
           </tr>
 
-          <!-- ══ URGENCY STRIP ══ -->
+          <!-- URGENCY STRIP -->
           <tr>
-            <td bgcolor="#ffffff"
-              style="padding:12px 24px;border-top:1px solid #eeeeee;border-bottom:1px solid #eeeeee;background-color:#ffffff;">
+            <td bgcolor="#111111" style="padding:12px 28px;background-color:#111111;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                            font-size:10px;font-weight:700;letter-spacing:0.14em;
-                            color:#aaaaaa;text-transform:uppercase;">
-                    <span style="display:inline-block;width:5px;height:5px;background-color:#e02010;
-                                border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Spots are limited
+                  <td
+                    style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:rgba(255,255,255,0.45);text-transform:uppercase;">
+                    <span
+                      style="display:inline-block;width:5px;height:5px;background-color:#e02010;border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Spots
+                    Are Limited
                   </td>
-                  <td align="center" style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                            font-size:10px;font-weight:700;letter-spacing:0.14em;
-                            color:#aaaaaa;text-transform:uppercase;">
-                    <span style="display:inline-block;width:5px;height:5px;background-color:#e02010;
-                                border-radius:50%;margin-right:6px;vertical-align:middle;"></span>The industry
-                    doesn&rsquo;t wait
+                  <td align="center"
+                    style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:rgba(255,255,255,0.45);text-transform:uppercase;">
+                    <span
+                      style="display:inline-block;width:5px;height:5px;background-color:#e02010;border-radius:50%;margin-right:6px;vertical-align:middle;"></span>The
+                    Industry Doesn&rsquo;t Wait
                   </td>
-                  <td align="right" style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                            font-size:10px;font-weight:700;letter-spacing:0.14em;
-                            color:#aaaaaa;text-transform:uppercase;">
-                    <span style="display:inline-block;width:5px;height:5px;background-color:#e02010;
-                                border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Neither should you
+                  <td align="right"
+                    style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:rgba(255,255,255,0.45);text-transform:uppercase;">
+                    <span
+                      style="display:inline-block;width:5px;height:5px;background-color:#e02010;border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Neither
+                    Should You
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ══ FOOTER ══ -->
+          <!-- FOOTER -->
           <tr>
-            <td bgcolor="#ffffff" style="padding:16px 24px;background-color:#ffffff;">
+            <td bgcolor="#f8f8f8" style="padding:18px 28px;background-color:#f8f8f8;border-top:1px solid #eeeeee;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                            font-size:11px;font-weight:600;letter-spacing:0.1em;
-                            color:#aaaaaa;text-transform:uppercase;">
-                    Warm regards, Team FGSN Learning
+                  <td style="font-family:'Barlow',Arial,sans-serif;font-size:12px;color:#999999;line-height:1.6;">
+                    Warm regards,<br>
+                    <strong style="color:#555555;font-size:13px;">Team FGSN Learning</strong>
                   </td>
-                  <td align="right" style="font-family:'Barlow Condensed','Arial Narrow',Impact,Arial,sans-serif;
-                            font-size:11px;font-weight:600;letter-spacing:0.1em;
-                            color:#aaaaaa;text-transform:uppercase;">
-                    Let&rsquo;s get to work.
+                  <td align="right"
+                    style="font-family:'Barlow',Arial,sans-serif;font-size:11px;color:#cccccc;line-height:1.6;">
+                    &copy; 2025 FGSN Learning<br>
+                    Digital Sports Media
                   </td>
                 </tr>
               </table>
@@ -443,12 +420,10 @@
           </tr>
 
         </table>
-        <!-- END INNER TABLE -->
 
       </td>
     </tr>
   </table>
-  <!-- END OUTER WRAPPER -->
 
 </body>
 
